@@ -392,7 +392,8 @@ var/global/use_preloader = FALSE
 		//check if this is a simple variable (as in list(var1, var2)) or an associative one (as in list(var1="foo",var2=7))
 		var/equal_position = findtext(text,"=",old_position, position)
 
-		var/trim_left = trim_text(copytext(text,old_position,(equal_position ? equal_position : position)),1)//the name of the variable, must trim quotes to build a BYOND compliant associatives list
+		//the name of the variable (if associative, in which case must trim quotes to build a BYOND compliant associatives list), or a value (in which case don't! trim quotes!)
+		var/trim_left = trim_text(copytext(text,old_position,(equal_position ? equal_position : position)), equal_position > 0)
 		old_position = position + 1
 
 		if(equal_position)//associative var, so do the association
@@ -425,7 +426,14 @@ var/global/use_preloader = FALSE
 			to_return[trim_left] = trim_right
 
 		else//simple var
-			to_return[trim_left] = null
+			if(findtext(trim_left,"\"",1,2)) //Check for string
+				to_return += copytext(trim_left,2,findtext(trim_left,"\"",3,0))
+			else if(isnum(text2num(trim_left))) //Check for number
+				to_return += text2num(trim_left)
+			else if(ispath(text2path(trim_left))) //Check for path
+				to_return += text2path(trim_left)
+			else
+				to_return += trim_text(trim_left, TRUE) // Or just hope for the best
 
 	while(position != 0)
 
