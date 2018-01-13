@@ -28,6 +28,12 @@
 	desc = "Old Faithful Supermatter"
 	mappath = 'maps/submaps/engine_submaps/engine_sme.dmm'
 
+/datum/map_template/engine/tesla
+	name = "Edison's Bane"
+	desc = "The Telsa Engine"
+	mappath = 'maps/submaps/engine_submaps/engine_tesla.dmm'
+
+
 
 // Landmark for where to load in the engine on permament map
 /obj/effect/landmark/engine_loader

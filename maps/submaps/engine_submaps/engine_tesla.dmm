@@ -35,7 +35,7 @@
 "aI" = (/obj/structure/cable/yellow{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/machinery/door/blast/regular{density = 0; dir = 2; icon_state = "pdoor0"; id = "SupermatterPort"; layer = 3.3; name = "Reactor Blast Door"; opacity = 0},/turf/simulated/floor,/area/engineering/engine_room)
 "aJ" = (/obj/effect/floor_decal/industrial/warning{dir = 8},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "aK" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/structure/cable/cyan{d1 = 1; d2 = 4; icon_state = "1-4"},/obj/effect/floor_decal/borderfloor/corner{dir = 4},/obj/effect/floor_decal/corner/yellow/bordercorner{dir = 4},/turf/simulated/floor/tiled,/area/engineering/engine_room)
-"aL" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light{dir = 1},/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/yellow/border{dir = 1},/turf/simulated/floor/tiled,/area/engineering/engine_room)
+"aL" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light{dir = 1},/obj/effect/floor_decal/borderfloor{dir = 1},/obj/effect/floor_decal/corner/yellow/border{dir = 1},/obj/machinery/power/grounding_rod,/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "aM" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light_switch{pixel_y = 24},/obj/machinery/atmospherics/unary/vent_scrubber/on,/obj/effect/floor_decal/borderfloor{dir = 1; icon_state = "borderfloor"; pixel_y = 0; tag = "icon-borderfloor (NORTH)"},/obj/effect/floor_decal/corner/yellow/border{dir = 1},/obj/effect/floor_decal/borderfloor/corner2{dir = 1},/obj/effect/floor_decal/corner/yellow/bordercorner2{dir = 1},/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "aN" = (/obj/structure/cable/cyan{d1 = 2; d2 = 8; icon_state = "2-8"},/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/hidden,/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "aO" = (/obj/machinery/power/apc{dir = 4; name = "east bump"; pixel_x = 28},/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/obj/effect/floor_decal/borderfloor{dir = 5},/obj/effect/floor_decal/corner/yellow/border{dir = 5},/obj/effect/floor_decal/borderfloor/corner2{dir = 4},/obj/effect/floor_decal/borderfloor/corner2{dir = 5},/obj/effect/floor_decal/corner/yellow/bordercorner2{dir = 5},/obj/effect/floor_decal/corner/yellow/bordercorner2{dir = 4},/turf/simulated/floor/tiled,/area/engineering/engine_room)
@@ -116,7 +116,7 @@
 "cl" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/obj/effect/floor_decal/borderfloor{dir = 4},/obj/effect/floor_decal/corner/yellow/border{dir = 4},/obj/effect/floor_decal/borderfloor/corner2{dir = 6},/obj/effect/floor_decal/corner/yellow/bordercorner2{dir = 6},/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "cm" = (/obj/machinery/power/rad_collector,/obj/structure/cable/yellow{d2 = 4; icon_state = "0-4"},/obj/machinery/light/small,/turf/simulated/floor,/area/engineering/engine_room)
 "cn" = (/obj/structure/cable/cyan{d1 = 2; d2 = 4; icon_state = "2-4"},/obj/effect/floor_decal/borderfloor/corner,/obj/effect/floor_decal/corner/yellow/bordercorner,/turf/simulated/floor/tiled,/area/engineering/engine_room)
-"co" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light,/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/yellow/border,/turf/simulated/floor/tiled,/area/engineering/engine_room)
+"co" = (/obj/machinery/power/tesla_coil,/turf/simulated/floor/airless,/area/space)
 "cp" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/atmospherics/unary/vent_pump/on{dir = 1},/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/yellow/border,/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "cq" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/alarm{dir = 1; icon_state = "alarm0"; pixel_y = -22},/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/yellow/border,/turf/simulated/floor/tiled,/area/engineering/engine_room)
 "cr" = (/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/effect/floor_decal/borderfloor{dir = 6},/obj/effect/floor_decal/corner/yellow/border{dir = 6},/obj/effect/floor_decal/industrial/hatch/yellow,/obj/structure/reagent_dispensers/fueltank,/turf/simulated/floor/tiled,/area/engineering/engine_room)
@@ -131,6 +131,8 @@
 "cA" = (/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/obj/effect/floor_decal/rust,/turf/simulated/floor/airless,/area/space)
 "cB" = (/obj/structure/closet/emcloset,/obj/machinery/embedded_controller/radio/airlock/airlock_controller{frequency = 1379; id_tag = "eng_south_airlock"; pixel_x = 24; pixel_y = 0; req_one_access = list(10,11); tag_airpump = "eng_south_pump"; tag_chamber_sensor = "eng_south_sensor"; tag_exterior_door = "eng_south_outer"; tag_interior_door = "eng_south_inner"},/turf/simulated/floor/tiled/dark,/area/engineering/engine_room)
 "cC" = (/turf/simulated/wall/r_wall,/area/space)
+"cD" = (/obj/structure/lattice,/obj/machinery/power/grounding_rod,/turf/space,/area/space)
+"cE" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/obj/machinery/light,/obj/effect/floor_decal/borderfloor,/obj/effect/floor_decal/corner/yellow/border,/obj/machinery/power/grounding_rod,/turf/simulated/floor/tiled,/area/engineering/engine_room)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -145,18 +147,18 @@ aaacababajakalalalalalalalamalanafaoafafafaeagapaqaeababaaaa
 aaacabababarajajajajajajajaradasatauavawaxaeayazaAaaaaaaaaaa
 aaacababababadabababababadababaBafafaCaDaEaeaeaFaeaaaaaaaaaa
 aaacababababadabababababadabababaGaHaIaJaKaLaMaNaOaaaaaaaaaa
-aaacababadadadadadadadadadadadabaGaPaQaRaSaTaUaVaWaaaaaaaaaa
-aaacadadadaXababababaXababaXadabaGaPaYaZbabbbcbdbeaaaaaaaaaa
-aaacababadabababababadabababadbfbgbgbhbibjbibibkblbmbmaaaaaa
-aaacababadabababadadadabababadbnbobpbqbrbsbtbibkaEaabubvaaaa
-aaacababadaXadadajajajadababadbnbwbxbybzbAbBbCbDaEaaaaaaaaaa
-aaacababadababadajbEajadababadbnbFbGbHbIbJbKbLbMbNaaaabOaaaa
-aaacababadababadajajajadadaXadbPbQbRbSbTbUbVbCbDaEaaaaaaaaaa
-aaacababadabababadadadabababadbPbWbpbpbXbpbYbibkaEaaaaaaaaaa
-aaacababadabababadabababababadbZbgbgbhbicabibibkcbbmbmaaaaaa
-aaacadadadaXababaXababababaXadabaGaPaIcccdcecfcgbaaaaaaaaaaa
-aaacababadadadadadadadadadadadabaGaPchciaTaTcjckclaaaaaaaaaa
-aaacababababadabababababadabababaGcmaYaJcncocpcqcraaaaaaaaaa
+aaacababajajajajajcoajajajajajabaGaPaQaRaSaTaUaVaWaaaaaaaaaa
+aaaccDadajaXababababaXababaXajabaGaPaYaZbabbbcbdbeaaaaaaaaaa
+aaacababajabababababadabababajbfbgbgbhbibjbibibkblbmbmaaaaaa
+aaacababajabababadadadabababcobnbobpbqbrbsbtbibkaEaabubvaaaa
+aaacababajaXadadajajajadababajbnbwbxbybzbAbBbCbDaEaaaaaaaaaa
+aaacababajababadajbEajadababajbnbFbGbHbIbJbKbLbMbNaaaabOaaaa
+aaacababajababadajajajadadaXajbPbQbRbSbTbUbVbCbDaEaaaaaaaaaa
+aaacababajabababadadadabababcobPbWbpbpbXbpbYbibkaEaaaaaaaaaa
+aaacababajabababadabababababajbZbgbgbhbicabibibkcbbmbmaaaaaa
+aaaccDadajaXababaXababababaXajabaGaPaIcccdcecfcgbaaaaaaaaaaa
+aaacababajajajajajcoajajajajajabaGaPchciaTaTcjckclaaaaaaaaaa
+aaacababababadabababababadabababaGcmaYaJcncEcpcqcraaaaaaaaaa
 aaacababababadabababababadababaBafafaCaDaEafafafafaaaaaaaaaa
 aaacabababcsajajajajajajajcsadakctcucvcwcxafaaaaaaaaaaaaaaaa
 aaacabadajcyalalalalalalalczalcAafcBafafafafaaaaaaaaaaaaaaaa

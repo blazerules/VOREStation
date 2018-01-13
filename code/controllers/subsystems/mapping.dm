@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(mapping)
 		if(istype(MT))
 			engine_types += MT
 	var/datum/map_template/engine/chosen_type = pick(engine_types)
-	chosen_type = map_templates["Singularity Engine"]
+	chosen_type = map_templates["Edison's Bane"]
 	admin_notice("<span class='danger'>Chose Engine Type: [chosen_type.name]</span>", R_DEBUG)
 
 	// Actually load it
