@@ -16,7 +16,7 @@
 	energy = 0
 	dissipate = 1
 	dissipate_delay = 5
-	dissipate_strength = 1
+	dissipate_strength = 5
 	var/list/orbiting_balls = list()
 	var/miniball = FALSE
 	var/produced_power
@@ -52,21 +52,17 @@
 	..()
 
 
-/obj/singularity/energy_ball/process()
+/obj/singularity/energy_ball/process(var/wait = 20)
+	set waitfor = FALSE
 	if(!orbiting)
 		handle_energy()
 
-		move_the_basket_ball(4 + orbiting_balls.len * 1.5)
+		move_the_basket_ball(max(wait - 5, 4 + orbiting_balls.len * 1.5))
 
 		playsound(src.loc, 'sound/effects/lightningbolt.ogg', 100, 1, extrarange = 30)
 
-		pixel_x = 0
-		pixel_y = 0
+		set_dir(tesla_zap(src.loc, 7, TESLA_DEFAULT_POWER, TRUE))
 
-		tesla_zap(src, 7, TESLA_DEFAULT_POWER, TRUE)
-
-		pixel_x = -32
-		pixel_y = -32
 		for (var/ball in orbiting_balls)
 			var/range = rand(1, Clamp(orbiting_balls.len, 3, 7))
 			tesla_zap(ball, range, TESLA_MINI_POWER/7*range, TRUE)
@@ -92,7 +88,7 @@
 			set_dir(move_dir)
 			for(var/mob/living/carbon/C in loc)
 				dust_mobs(C)
-
+			sleep(1) // So movement si smooth
 
 /obj/singularity/energy_ball/proc/handle_energy()
 	if(energy >= energy_to_raise)
@@ -183,6 +179,7 @@
 										/obj/machinery/power/emitter,
 										/obj/machinery/field_generator,
 										/mob/living/simple_animal,
+										/obj/machinery/door/blast,
 										/obj/machinery/particle_accelerator/control_box,
 										/obj/structure/particle_accelerator/fuel_chamber,
 										/obj/structure/particle_accelerator/particle_emitter/center,
@@ -227,7 +224,7 @@
 		else if(isliving(A))
 			var/dist = get_dist(source, A)
 			var/mob/living/L = A
-			if(dist <= zap_range && (dist < closest_dist || !closest_mob) && L.stat != DEAD /*&& !(L.flags_2 & TESLA_IGNORE_2)*/)
+			if(dist <= zap_range && (dist < closest_dist || !closest_mob) && L.stat != DEAD && !(L.status_flags & GODMODE))
 				closest_mob = L
 				closest_atom = A
 				closest_dist = dist
@@ -268,7 +265,7 @@
 	//Alright, we've done our loop, now lets see if was anything interesting in range
 	if(closest_atom)
 		//common stuff
-		source.Beam(closest_atom, icon_state="lightning[rand(1,12)]", time=5, maxdistance = INFINITY)
+		source.Beam(closest_atom, icon_state="lightning[rand(1,12)]", icon='icons/effects/beam_vr.dmi', time=5, maxdistance = INFINITY)
 		var/zapdir = get_dir(source, closest_atom)
 		if(zapdir)
 			. = zapdir
@@ -287,7 +284,7 @@
 			var/mob/living/silicon/S = closest_mob
 			if(stun_mobs)
 				S.emp_act(3 /*EMP_LIGHT*/)
-			tesla_zap(S, 7, power / 1.5, explosive, stun_mobs) // metallic folks bounce it further
+			tesla_zap(closest_mob, 7, power / 1.5, explosive, stun_mobs) // metallic folks bounce it further
 		else
 			tesla_zap(closest_mob, 5, power / 1.5, explosive, stun_mobs)
 

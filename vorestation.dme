@@ -2297,6 +2297,7 @@
 #include "code\modules\power\tesla\generator.dm"
 #include "code\modules\power\tesla\orbit.dm"
 #include "code\modules\power\tesla\subsystem_orbit.dm"
+#include "code\modules\power\tesla\tesla_act.dm"
 #include "code\modules\projectiles\ammunition.dm"
 #include "code\modules\projectiles\dnalocking.dm"
 #include "code\modules\projectiles\effects.dm"

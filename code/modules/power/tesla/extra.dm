@@ -1,21 +1,3 @@
-//////////////////////////////////////////
-// Extra defines needed for tesla support
-//////////////////////////////////////////
-
-/obj
-	var/being_shocked = FALSE
-
-/obj/proc/tesla_act(var/power)
-	being_shocked = TRUE
-	var/power_bounced = power / 2
-	tesla_zap(src, 3, power_bounced)
-	//addtimer(CALLBACK(src, .proc/reset_shocked), 10)
-	//schedule_task_with_source_in(10, src, .proc/reset_shocked)
-	spawn(10) reset_shocked()
-
-/obj/proc/reset_shocked()
-	being_shocked = FALSE
-
 //////////////////////////
 // Circuits and Research
 //////////////////////////
@@ -26,7 +8,6 @@
 	board_type = new /datum/frame/frame_types/machine
 	origin_tech = list(TECH_MAGNET = 2, TECH_POWER = 4)
 	req_components = list(/obj/item/weapon/stock_parts/capacitor = 1)
-
 
 /datum/design/circuit/tesla_coil
 	name = "Machine Design (Tesla Coil Board)"
@@ -74,8 +55,6 @@
 					for(var/T in typesof(P))
 						L[T] = TRUE
 		return L
-
-
 
 /obj/machinery/power/proc/default_unfasten_wrench(var/mob/user, var/obj/item/weapon/wrench/W)
 	if(!istype(W))
